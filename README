@@ -1,0 +1,22 @@
+Disclosapage
+
+Version 1.0
+
+Author: Robert Sinton
+
+Disclosapage adds disclosure controls to MojoMotor's page manipulation tree.
+
+
+Installation
+------------
+
+Copy the entire folder (as 'disclosapage') into the addons folder (system/mojomotor/thirdparty).
+
+
+Usage
+-----
+
+To activate the addon, you must click the MojoBar Pages button while sitting on a layout that includes this tag:
+
+{mojo:disclosapage:start}
+
