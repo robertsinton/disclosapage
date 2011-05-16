@@ -1,6 +1,7 @@
 Disclosapage
+============
 
-Version 1.0
+Version 1.1
 
 Author: Robert Sinton
 
@@ -20,3 +21,9 @@ To activate the addon, you must click the MojoBar Pages button while sitting on 
 
 {mojo:disclosapage:start}
 
+
+Known Issues
+------------
+
+If you remove all subpages from a page in the tree,
+you will still see a disclosure control until the next tie the tree is redisplayed.

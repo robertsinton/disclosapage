@@ -23,6 +23,15 @@ Disclosapage.init = function () {
 			setTimeout('Disclosapage.waitForTree()', 100);
 		}
 	});
+	// Also add a hook to the save buttons on the add Add Page and Edit Page panes.
+	jQuery('input[name=page_prefs]').live('click', function() {
+		setTimeout('Disclosapage.waitForTree()', 100);
+	});
+	// And the 'Pages' breadcrumb link on the Add Page and Edit Page panes.
+	// (It's also on the main Pages page, but we test before adding extra controls below.)
+	jQuery('#mojo_reveal_page_back').live('click', function() {
+		setTimeout('Disclosapage.waitForTree()', 100);
+	});
 }
 
 Disclosapage.waitForTree = function () {
@@ -31,8 +40,10 @@ Disclosapage.waitForTree = function () {
 	if ((jQuery( '#mojo_site_structure' ).size() == 0) || (jQuery('#mojo_reveal_page').css('display') == 'none')){
 		setTimeout('Disclosapage.waitForTree()', 100);
 	} else {
-		// ... then add disclosure targets in the appropriate places.
-		jQuery('li:has(ul.mojo_sub_structure) > div.ui-droppable:first-child').prepend('<span class="disclosure_target">&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+		// ... then add disclosure targets in the appropriate places, if they aren't there already.
+		if ( jQuery('.disclosure_target').size() == 0 ) {
+			jQuery('li:has(ul.mojo_sub_structure) > div.ui-droppable:first-child').prepend('<span class="disclosure_target">&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+		}
 	}
 }
 
